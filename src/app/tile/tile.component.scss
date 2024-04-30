@@ -1,27 +1,52 @@
 .tile_class {
   align-items: center;
   display: flex;
-  height: 100%;
-
+  //width: calc(60vh / 12); /* Obliczona szerokość pojedynczego kafelka */
+  width: 30px;
+  height: 30px;
+  //height: fit-content;
   justify-content: center;
-  width: 100%;
-
   cursor: pointer;
-}
-.tile_class-Y {
-  background-color: rgb(254, 4, 4);
-  color: white;
+
+  &-X {
+    background-color: rgb(72, 8, 8);
+    color: white;
+  }
+
+  &-0 {
+    background-color: rgb(77, 250, 3);
+  }
+
+  &-1 {
+    background-color: rgb(0, 13, 255);
+  }
+
+  &-Y {
+    background-color: rgb(255, 0, 0);
+    color: white;
+  }
 }
 
-.tile_class-X {
-  background-color: rgb(44, 11, 11);
-  color: white;
-}
+// .tile_class {
+//   align-items: center;
+//   display: flex;
+//   //width: calc(60vh / 12); /* Obliczona szerokość pojedynczego kafelka */
+//   width: 25px;
+//   height: 25px;
+//   //height: fit-content;
+//   justify-content: center;
+//   cursor: pointer;
+// }
 
-.tile_class-0 {
-  background-color: rgb(77, 250, 3);
-}
+// .tile_class-X {
+//   background-color: rgb(44, 11, 11);
+//   color: white;
+// }
 
-.tile_class-1 {
-  background-color: rgb(0, 13, 255);
-}
+// .tile_class-0 {
+//   background-color: rgb(77, 250, 3);
+// }
+
+// .tile_class-1 {
+//   background-color: rgb(0, 13, 255);
+// }

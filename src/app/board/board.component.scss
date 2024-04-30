@@ -1,0 +1,12 @@
+.board_row {
+  // display: grid;
+  display: flex;
+  //grid-template-columns: minmax(12);
+  //grid-template-columns: calc(12 * (100vh / 25)) 1fr;
+  //   height: 25px;
+  //   width: 300px;
+  //width: 100%;
+
+  margin: auto;
+  justify-content: center;
+}

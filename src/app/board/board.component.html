@@ -1,2 +1,16 @@
 <p>board works!</p>
+
+@for(row of BOARD; track row; let y=$index){
+<div class="board_row">
+  <!-- <div> -->
+  @for (tile of BOARD[y]; track tile; let x=$index) {
+  <app-tile [tileType]="BOARD[y][x]" (click)="handleTileClick(y, x)">{{
+    BOARD[y][x]
+  }}</app-tile>
+  }
+</div>
+
+}
 <!-- {{ BOARD }} -->
+<!-- [status]="bouncySimulatorService.status()" (click)="handleSquareClick(y,x)" -->
+<!-- class="'tile_class-' + BOARD[y][x].tileType" -->
