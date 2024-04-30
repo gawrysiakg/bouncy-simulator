@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { MAIN_BOARD, Operation } from '../consts';
+import { Operation } from '../consts';
 import { CommonModule, NgIf } from '@angular/common';
 import { TileComponent } from '../tile/tile.component';
+import { BouncyService } from '../bouncy.service';
 
 @Component({
   selector: 'app-board',
@@ -11,16 +12,21 @@ import { TileComponent } from '../tile/tile.component';
   styleUrl: './board.component.scss',
 })
 export class BoardComponent {
-  public BOARD: any = MAIN_BOARD;
+  public BOARD: any;
+  constructor(private _bouncyService: BouncyService) {
+    this.BOARD = _bouncyService.getBoard();
+  }
 
   isBallVisible = false;
   areObstaclesVisible = false;
   public currentOperation: Operation = Operation.SET_BALL;
   public buttonText = '';
+  public isGameStarted = false;
 
   handleTileClick(x: number, y: number) {
     if (this.currentOperation === Operation.SET_BALL) {
       this.BOARD[x][y] = '1';
+      this._bouncyService.setBallPosition(x, y);
       this.isBallVisible = true;
       this.currentOperation = Operation.SET_OBSTACLE;
     } else if (this.currentOperation === Operation.SET_OBSTACLE) {
@@ -31,15 +37,22 @@ export class BoardComponent {
       }
       // this.currentOperation = Operation.PLAY;
     } else if (this.currentOperation === Operation.RESTART) {
-      this.BOARD = MAIN_BOARD;
+      this.BOARD = this._bouncyService.getBoard();
     }
   }
 
   handleObstacleOKButton() {
     if (this.isBallVisible) {
       this.currentOperation = Operation.PLAY;
+      this.isGameStarted = true;
+      this._bouncyService.startGame();
     } else {
       alert('Set ball position');
     }
+  }
+
+  handleStopButton() {
+    this.isGameStarted = false;
+    this._bouncyService.stopGame();
   }
 }
