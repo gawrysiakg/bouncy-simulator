@@ -1,5 +1,3 @@
-<p>board works!</p>
-
 @for(row of BOARD; track row; let y=$index){
 <div class="board_row">
   <!-- <div> -->
@@ -11,6 +9,21 @@
 </div>
 
 }
-<!-- {{ BOARD }} -->
-<!-- [status]="bouncySimulatorService.status()" (click)="handleSquareClick(y,x)" -->
-<!-- class="'tile_class-' + BOARD[y][x].tileType" -->
+<br />
+@if (currentOperation === "SET_BALL") {
+<div class="board_label">
+  <br />
+  <p>Wybierz pozycję piłki na planszy</p>
+  <br />
+</div>
+
+} @if (currentOperation === "SET_OBSTACLE") {
+
+<div class="board_label">
+  <p>Wybierz pozycje przeszkód i kliknij Play</p>
+
+  <button (click)="handleObstacleOKButton()">Play</button>
+  <br />
+</div>
+
+}

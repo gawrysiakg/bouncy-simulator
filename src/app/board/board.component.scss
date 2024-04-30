@@ -10,3 +10,16 @@
   margin: auto;
   justify-content: center;
 }
+
+.board_label {
+  font-family: "Comic Neue", cursive;
+  box-shadow: 0 0 20px rgb(196, 247, 126);
+  margin-top: 30px;
+  background-color: rgb(77, 250, 3);
+  box-shadow: inset;
+  border-radius: 15px;
+  display: grid;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}

@@ -10,5 +10,5 @@ import { BoardComponent } from './board/board.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'bouncy-simulator';
+  title = 'bouncy simulator';
 }

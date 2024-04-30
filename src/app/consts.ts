@@ -5,7 +5,21 @@ export enum TileName {
   EMPTY = '0',
 }
 
-export const MAIN_BOARD = [
+// export enum Operation {
+//   SET_BALL,
+//   SET_OBSTACLE,
+//   PLAY,
+//   RESTART,
+// }
+
+export enum Operation {
+  SET_BALL = 'SET_BALL',
+  SET_OBSTACLE = 'SET_OBSTACLE',
+  PLAY = 'PLAY',
+  RESTART = 'RESTART',
+}
+
+export const BOARD = [
   ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
   ['X', '1', '0', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
   ['X', '0', '0', '0', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
@@ -23,3 +37,5 @@ export const MAIN_BOARD = [
   ['X', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'X'],
   ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
 ];
+
+export const MAIN_BOARD = JSON.parse(JSON.stringify(BOARD));
