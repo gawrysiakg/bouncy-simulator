@@ -1,6 +1,5 @@
 @for(row of BOARD; track row; let y=$index){
 <div class="board_row">
-  <!-- <div> -->
   @for (tile of BOARD[y]; track tile; let x=$index) {
   <app-tile [tileType]="BOARD[y][x]" (click)="handleTileClick(y, x)">{{
     BOARD[y][x]
@@ -29,7 +28,7 @@
 
 } @if (currentOperation === "PLAY") {
 <div class="board_label">
-  <br />
+  <p>Kliknij Stop by zakończyć</p>
   <button (click)="handleStopButton()">Stop</button>
   <br />
 </div>
