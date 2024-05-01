@@ -1,27 +1,49 @@
-# BouncySimulator
+# Bouncy Ball Game
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
+## Opis
 
-## Development server
+Bouncy Ball Game to prosta gra, w której sterujesz piłką poruszającą się po planszy z przeszkodami. Celem gry jest zbicie wszystkich przeszkód.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Instrukcje
 
-## Code scaffolding
+1. **Uruchomienie gry**: Aby uruchomić grę, otwórz aplikację w przeglądarce internetowej lub w aplikacji mobilnej.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. **Ruch piłki**: Piłka porusza się automatycznie po planszy. Nie musisz sterować jej ruchem. Zadaniem gracza jest jedynie ustawić początkową pozycję piłki i przeszkód.
 
-## Build
+3. **Ustawianie początkowej pozycji piłki**: Kliknij na planszy, aby ustawić początkową pozycję piłki. Możesz zmieniać jej pozycję po zatrzymaniu gry.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4. **Odbijanie się od ścian i przeszkód**: Piłka odbija się od ścian planszy oraz od przeszkód, które są oznaczone jako pola 'X' lub 'Y'.
 
-## Running unit tests
+5. **Przeszkody**: Przeszkody oznaczone są jako pola 'Y'. Gdy piłka odbije się od przeszkody, zostaje ona zmieniona na puste pole ('0').
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+6. **Zakończenie gry**: Gra kończy się, gdy użytkownik naciśnie stop.
 
-## Running end-to-end tests
+## Technologie
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Aplikacja Bouncy Ball Game została zbudowana w oparciu o następujące technologie:
 
-## Further help
+- Angular: Framework do budowania interaktywnych aplikacji internetowych [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1
+- TypeScript: Rozszerzenie języka JavaScript, używane do programowania aplikacji w Angularze.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Uruchomienie lokalne
+
+Jeśli chcesz uruchomić aplikację lokalnie na swoim komputerze, wykonaj następujące kroki:
+
+1. Sklonuj repozytorium na swój lokalny komputer:
+   git clone https://github.com/gawrysiakg/bouncy-ball-game.git
+
+2. Przejdź do katalogu projektu:
+   cd bouncy-ball-game
+
+3. Zainstaluj zależności za pomocą npm:
+   npm install
+
+4. Uruchom aplikację:
+   ng serve
+
+5. Otwórz przeglądarkę internetową i przejdź pod adres:
+   http://localhost:4200/
+
+#
+
+Autor: GG
