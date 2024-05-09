@@ -6,7 +6,8 @@
 }
 
 .board_label {
-  font-family: "Comic Neue", cursive;
+  // font-family: "Comic Neue", cursive;
+  font-family: var(--inter-font);
   box-shadow: 0 0 20px rgb(235, 232, 247);
   margin-top: 30px;
   box-shadow: inset;
