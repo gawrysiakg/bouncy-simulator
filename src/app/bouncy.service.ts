@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { MAIN_BOARD } from './consts';
-import { Subscription, interval } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +9,10 @@ export class BouncyService {
 
   public BOARD: any = MAIN_BOARD;
   private ballPosition: [number, number] | undefined;
-  private subscription: Subscription | undefined;
   private directionX: number = 1;
   private directionY: number = 1;
+  public intervalId: any = undefined;
+  public ballSpeed = 500;
 
   public getBoard() {
     return this.BOARD;
@@ -106,18 +106,26 @@ export class BouncyService {
   }
 
   public startGame() {
-    if (!this.subscription) {
-      this.subscription = interval(1000).subscribe(() => {
+    if (!this.intervalId) {
+      this.intervalId = setInterval(() => {
         this.move();
-        console.log('Ball position: ' + this.ballPosition);
-      });
+      }, this.ballSpeed);
     }
   }
 
+  public setBallSpeed(speed: number) {
+    this.ballSpeed = speed;
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = setInterval(() => {
+        this.move();
+      }, this.ballSpeed);
+    }
+  }
   public stopGame() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-      this.subscription = undefined;
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = undefined;
       this.BOARD = MAIN_BOARD;
       if (this.ballPosition) {
         const [x, y] = this.ballPosition;
